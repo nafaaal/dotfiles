@@ -1,0 +1,34 @@
+{
+  "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "python.pythonPath": "/Users/nafaal/Projects/university/Mathematics B/statistic/venv/bin/python",
+  "workbench.editor.enablePreview": false,
+  "workbench.colorCustomizations": {},
+  "editor.suggestSelection": "first",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/*.class": true
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "python.showStartPage": false,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "editor.formatOnSave": true,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "workbench.sideBar.location": "right",
+  "window.zoomLevel": 1,
+  "editor.lineNumbers": "relative",
+  "vim.vimrc.enable": true,
+  "workbench.colorTheme": "Eva Dark"
+}
