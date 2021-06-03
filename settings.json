@@ -1,7 +1,7 @@
 {
   "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
-  "python.pythonPath": "/Users/nafaal/Projects/university/Mathematics B/statistic/venv/bin/python",
+  "python.pythonPath": "/usr/local/bin/python3",
   "workbench.editor.enablePreview": false,
   "workbench.colorCustomizations": {},
   "editor.suggestSelection": "first",

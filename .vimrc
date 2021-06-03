@@ -1,4 +1,5 @@
 set rnu
+set nu
 set autoindent
 set ruler
 set showcmd
