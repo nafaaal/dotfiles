@@ -30,5 +30,6 @@
   "window.zoomLevel": 1,
   "editor.lineNumbers": "relative",
   "vim.vimrc.enable": true,
-  "workbench.colorTheme": "Eva Dark"
+  "workbench.colorTheme": "Eva Dark",
+  "terminal.integrated.fontFamily": "MesloLGS NF"
 }
