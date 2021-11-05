@@ -23,7 +23,7 @@ cp -r $HOME/Library/Application\ Support/Code/User/snippets .
 code --list-extensions --show-versions >> ../../vscode/extensions.txt
 
 # copy other dot files
-cp  $HOME/{.zshrc,.vimrc} .
+cp  $HOME/{.zshrc,.vimrc,.p10k.zsh} .
 
 
 
