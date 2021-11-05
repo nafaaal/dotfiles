@@ -5,8 +5,8 @@
   "workbench.editor.enablePreview": false,
   "workbench.colorCustomizations": {},
   "editor.suggestSelection": "first",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -16,13 +16,10 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "python.showStartPage": false,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "editor.formatOnSave": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "editor.formatOnSave": false,
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
@@ -31,5 +28,20 @@
   "editor.lineNumbers": "relative",
   "vim.vimrc.enable": true,
   "workbench.colorTheme": "Eva Dark",
-  "terminal.integrated.fontFamily": "MesloLGS NF"
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "workbench.iconTheme": "material-icon-theme",
+  "security.workspace.trust.untrustedFiles": "open",
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "go.lintTool": "golint"
 }

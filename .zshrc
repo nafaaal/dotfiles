@@ -17,6 +17,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/nafaal/.oh-my-zsh"
 
+#COMS20007 setup 
+export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
+export BOOTSTRAP_HASKELL_GHC_VERSION=9.0.1
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -111,13 +115,11 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zshconf="vim ~/.zshrc"
-alias vimconf="vim ~/.vimrc"
+alias zshconf="vim ~/.zshrc && source ~/.zshrc"
+alias vimconf="vim ~/.vimrc && source ~/.vimrc"
 alias c="clear"
+alias idea='open -na "IntelliJ IDEA.app"'
 alias logisim="java -jar ~/Documents/logisim-generic-2.7.1.jar"
-#alias pwd="pwd && pwd | tr -d '\n' | pbcopy"
 
 [ -f "/Users/nafaal/.ghcup/env" ] && source "/Users/nafaal/.ghcup/env" # ghcup-env
 
