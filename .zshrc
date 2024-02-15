@@ -23,6 +23,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# If a new command being added to the history is already present, the previous one will be removed and the command will be shown at the end of the list.
+setopt hist_ignore_all_dups
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
