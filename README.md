@@ -11,23 +11,33 @@ Ensure you have the following installed on your system:
 
 ## How It Works
 
-GNU Stow uses **symlinks** to manage your dotfiles cleanly. It works best when your `dotfiles` directory is placed **inside your `$HOME` directory**:
+GNU Stow uses **symlinks** to manage your dotfiles cleanly.  
+The recommended structure is to place your `dotfiles` directory **inside your `$HOME` directory**, and organize each application's configuration files in its own folder:
 
 ```
 $HOME
 └── dotfiles/
-    ├── .zshrc
-    ├── .vimrc
-    └── ...
+    ├── vim/
+    │   └── .vimrc
+    ├── zsh/
+    │   └── .zshrc
+    └── tmux/
+        └── .tmux.conf
 ```
 
 When you run:
 
 ```
-stow .
+stow vim
 ```
 
-inside the `dotfiles` directory, Stow will create **symlinks in the parent folder** (`$HOME`) pointing to the files in `dotfiles`. This allows you to keep your configuration files under version control while seamlessly using them in your system.
+inside the `dotfiles` directory, Stow will create **symlinks in the parent folder (`$HOME`)** for everything inside `vim/`, e.g.:
+
+```
+$HOME/.vimrc -> $HOME/dotfiles/vim/.vimrc
+```
+
+This keeps your home directory clean while allowing you to manage and version-control your configuration files seamlessly.
 
 ---
 
@@ -41,15 +51,15 @@ git clone git@github.com:nafaaal/dotfiles.git
 cd dotfiles
 ```
 
-2️⃣ Use GNU Stow to create the symlinks:
+2️⃣ Use GNU Stow to stow the configurations you want, for example:
 
 ```
-stow .
+stow vim
+stow zsh
+stow tmux
 ```
 
-Your configuration files inside `dotfiles` are now linked into your home directory.
-
-Note - If the dotfile is already existing in `$HOME` you might have to delete it so that the symlink can be created
+This will symlink `.vimrc`, `.zshrc`, and `.tmux.conf` into your home directory from your organized `dotfiles` folders.
 
 ---
 
@@ -57,30 +67,36 @@ Note - If the dotfile is already existing in `$HOME` you might have to delete it
 
 To track a new dotfile with Stow:
 
-1️⃣ Create the new file **inside your `dotfiles` directory**:
+1️⃣ **Create a directory for the application** if it does not exist, e.g.:
 
 ```
 cd ~/dotfiles
-touch .newconfig
+mkdir nvim
 ```
 
-2️⃣ Remove the original file from `$HOME` if it already exists:
+2️⃣ **Move the configuration file into the corresponding directory**:
 
 ```
-rm ~/.newconfig
+mv ~/.config/nvim/init.vim ~/dotfiles/nvim/init.vim
 ```
 
-3️⃣ Run Stow again to create the symlink:
+or if it’s in `$HOME`:
 
 ```
-stow .
+mv ~/.newconfig ~/dotfiles/newapp/.newconfig
+```
+
+3️⃣ Run Stow to create the symlink:
+
+```
+stow nvim
 ```
 
 4️⃣ Track your changes with Git:
 
 ```
-git add .newconfig
-git commit -m "Add .newconfig to dotfiles"
+git add nvim/init.vim
+git commit -m "Add Neovim config"
 git push
 ```
 
@@ -88,6 +104,24 @@ git push
 
 ## Notes
 
-✅ Always **add and edit files inside `~/dotfiles`**, not directly in `$HOME`.  
-✅ Running `stow .` will automatically handle creating or updating symlinks.  
-✅ You can organize dotfiles by directory (e.g., `vim/.vimrc`, `zsh/.zshrc`) if you wish to stow selectively (`stow vim`).
+✅ Use `stow <app>` to manage symlinks for specific apps, making it easier to enable/disable configs on different machines.  
+✅ You can unstow a set of configs with:
+
+```
+stow -D <app>
+```
+
+✅ If you update files inside your `dotfiles` repo, you usually do **not** need to re-run Stow unless you add or remove files.
+
+---
+
+## ⚠️ Short Note: Existing Files
+
+If a file you want to symlink **already exists in your `$HOME`**, Stow will fail with a "file exists" error.
+
+Before running `stow <app>`, either:
+
+- **Remove the existing file**, or
+- **Move it into your `dotfiles/<app>/` directory** to keep it under version control, then run `stow <app>`.
+
+This ensures Stow can manage your symlinks cleanly without conflicts.
